@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const yup = require('yup');
 const monk = require('monk');
 const { nanoid } = require('nanoid');
@@ -13,7 +13,7 @@ urls.createIndex({ slug: 1 }, { unique: true });
 
 const app = express();
 
-app.use(helmet());
+// app.use(helmet());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.static('./public'));
