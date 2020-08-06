@@ -37,6 +37,10 @@ header {
   max-width: 90%;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   color: whitesmoke;
   border: none;
