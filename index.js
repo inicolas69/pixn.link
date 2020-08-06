@@ -53,7 +53,7 @@ app.post('/url', async (req, res, next) => {
     } else {
       const existing = await urls.findOne({ slug });
       if (existing) {
-        throw new Error('Raccourci déjà pris.');
+        throw new Error('Alias already used.');
       }
     }
     slug = slug.toLowerCase();
@@ -71,6 +71,8 @@ app.post('/url', async (req, res, next) => {
 app.use((error, req, res, next) => {
   if (error.status) {
     res.status(error.status);
+  } else {
+    res.status(500);
   }
   res.json({
     message: error.message,
