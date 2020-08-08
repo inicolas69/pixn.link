@@ -4,7 +4,6 @@ const morgan = require('morgan');
 const yup = require('yup');
 const monk = require('monk');
 const { nanoid } = require('nanoid');
-const mustacheExpress = require('mustache-express');
 
 require('dotenv').config();
 
@@ -14,12 +13,6 @@ urls.createIndex({ slug: 1 }, { unique: true });
 
 const app = express();
 app.enable('trust proxy');
-
-// Register '.mustache' extension with The Mustache Express
-app.engine('mustache', mustacheExpress());
-
-app.set('view engine', 'mustache');
-app.set('public', __dirname + '/public');
 
 // app.use(helmet());
 app.use(morgan('tiny'));
