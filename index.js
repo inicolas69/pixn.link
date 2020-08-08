@@ -19,7 +19,7 @@ app.enable('trust proxy');
 app.engine('mustache', mustacheExpress());
 
 app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
+app.set('public', __dirname + '/public');
 
 // app.use(helmet());
 app.use(morgan('tiny'));
